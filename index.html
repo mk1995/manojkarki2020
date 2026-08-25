@@ -1,428 +1,256 @@
-<html lang="en"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Manoj Karki — Data Engineer &amp; Apify Actor Developer</title>
-<meta name="description" content="Manoj Karki (DataFusionX) — Python data engineer, web scraping specialist, and Apify Actor developer. 28+ public Actors, 9.7K+ users, 99%+ success rate.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
-<style>
-  :root{
-    --carbon:#0b1119;
-    --panel:#121b28;
-    --panel-2:#182333;
-    --line:#25334a;
-    --bone:#ece6d8;
-    --bone-dim:#a9b2c2;
-    --moss:#6f9c7d;
-    --moss-dim:#3f5a48;
-    --gold:#cf9f52;
-    --rust:#a85a3f;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--carbon);
-    color:var(--bone);
-    font-family:'Inter',sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  .font-display{font-family:'Space Grotesk',sans-serif;}
-  .font-mono{font-family:'IBM Plex Mono',monospace;}
-  a{color:inherit;}
-  ::selection{background:var(--moss);color:var(--carbon);}
-
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
-
-  /* subtle grid texture on the base background */
-  .bg-grid{
-    background-image:
-      linear-gradient(rgba(236,230,216,0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(236,230,216,0.035) 1px, transparent 1px);
-    background-size: 42px 42px;
-  }
-
-  /* nav */
-  header.site{
-    position:sticky; top:0; z-index:50;
-    background:rgba(11,17,25,0.85);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;}
-  .brand{display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:.02em;}
-  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--moss);box-shadow:0 0 0 3px rgba(111,156,125,0.18);}
-  nav.links{display:flex;gap:28px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--bone-dim);}
-  nav.links a{text-decoration:none;transition:color .15s;}
-  nav.links a:hover, nav.links a:focus-visible{color:var(--gold);}
-  .nav-cta{
-    font-family:'IBM Plex Mono',monospace;font-size:13px;
-    border:1px solid var(--moss-dim); color:var(--moss);
-    padding:8px 14px; border-radius:4px; text-decoration:none;
-    transition:border-color .15s, color .15s, background .15s;
-  }
-  .nav-cta:hover, .nav-cta:focus-visible{border-color:var(--moss); background:rgba(111,156,125,0.08);}
-  @media (max-width:760px){ nav.links{display:none;} }
-
-  /* hero */
-  .hero{padding:88px 0 64px;}
-  .eyebrow{
-    font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:.14em; text-transform:uppercase;
-    color:var(--gold); display:flex; align-items:center; gap:10px; margin-bottom:18px;
-  }
-  .eyebrow::before{content:'';width:22px;height:1px;background:var(--gold);display:inline-block;}
-  .hero-grid{display:grid; grid-template-columns:1.15fr 1fr; gap:56px; align-items:start;}
-  @media (max-width:900px){ .hero-grid{grid-template-columns:1fr;} }
-
-  h1.headline{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:clamp(34px,5vw,54px);
-    line-height:1.06; font-weight:700; letter-spacing:-0.01em;
-    margin:0 0 20px;
-  }
-  h1.headline .accent{color:var(--moss);}
-  .sub{color:var(--bone-dim); font-size:17px; line-height:1.6; max-width:52ch; margin:0 0 32px;}
-
-  .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
-  .btn{
-    font-family:'IBM Plex Mono',monospace; font-size:14px;
-    padding:13px 22px; border-radius:4px; text-decoration:none;
-    display:inline-flex; align-items:center; gap:8px;
-    transition:transform .15s, box-shadow .15s, background .15s;
-  }
-  .btn-primary{background:var(--moss); color:#0b1119; font-weight:600;}
-  .btn-primary:hover, .btn-primary:focus-visible{transform:translateY(-1px); box-shadow:0 6px 18px rgba(111,156,125,0.25);}
-  .btn-ghost{border:1px solid var(--line); color:var(--bone);}
-  .btn-ghost:hover, .btn-ghost:focus-visible{border-color:var(--bone-dim);}
-
-  /* terminal signature element */
-  .terminal{
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:10px;
-    overflow:hidden;
-    box-shadow:0 24px 60px -20px rgba(0,0,0,0.6);
-  }
-  .term-bar{
-    display:flex; align-items:center; gap:8px;
-    padding:11px 14px; background:var(--panel-2); border-bottom:1px solid var(--line);
-  }
-  .term-dot{width:10px;height:10px;border-radius:50%;}
-  .term-body{
-    padding:20px 18px 24px; font-family:'IBM Plex Mono',monospace; font-size:13.5px; line-height:1.85;
-    min-height:230px; color:#c9d1de;
-  }
-  .term-prompt{color:var(--moss);}
-  .term-line{opacity:0; animation:fadeIn .3s forwards;}
-  .cursor{display:inline-block; width:7px; height:14px; background:var(--gold); vertical-align:-2px; animation:blink 1s step-end infinite;}
-  @keyframes fadeIn{to{opacity:1;}}
-  @keyframes blink{50%{opacity:0;}}
-  @media (prefers-reduced-motion: reduce){
-    .term-line{opacity:1; animation:none;}
-    .cursor{animation:none;}
-  }
-
-  /* stats strip */
-  .stats{border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--panel);}
-  .stats-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:0;}
-  .stat{padding:30px 24px; border-right:1px solid var(--line);}
-  .stat:last-child{border-right:none;}
-  .stat .num{font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:700; color:var(--gold);}
-  .stat .lbl{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--bone-dim); margin-top:4px; letter-spacing:.03em;}
-  @media (max-width:760px){ .stats-grid{grid-template-columns:repeat(2,1fr);} .stat{border-bottom:1px solid var(--line);} }
-
-  /* section shell */
-  section{padding:84px 0;}
-  .section-head{margin-bottom:40px;}
-  .kicker{font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--moss);}
-  h2.section-title{font-family:'Space Grotesk',sans-serif; font-size:clamp(26px,3.4vw,36px); font-weight:700; margin:8px 0 0;}
-  .section-desc{color:var(--bone-dim); max-width:60ch; margin-top:12px; line-height:1.6;}
-
-  /* stack tags */
-  .tag-grid{display:flex; flex-wrap:wrap; gap:10px;}
-  .tag{
-    font-family:'IBM Plex Mono',monospace; font-size:13px;
-    border:1px solid var(--line); padding:9px 14px; border-radius:6px; color:var(--bone-dim);
-    background:var(--panel);
-  }
-
-  /* actors leaderboard */
-  .board{border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--panel);}
-  .board-row{
-    display:grid; grid-template-columns:56px 1fr 130px 44px;
-    align-items:center; gap:16px; padding:20px 22px;
-    border-bottom:1px solid var(--line); text-decoration:none; color:var(--bone);
-    transition:background .15s;
-  }
-  .board-row:last-child{border-bottom:none;}
-  .board-row:hover, .board-row:focus-visible{background:var(--panel-2);}
-  .rank{font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:700; color:var(--moss-dim);}
-  .board-row:nth-child(1) .rank{color:var(--gold);}
-  .actor-name{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16.5px;}
-  .actor-desc{color:var(--bone-dim); font-size:13.5px; margin-top:4px; line-height:1.5;}
-  .users{font-family:'IBM Plex Mono',monospace; font-size:14px; color:var(--gold); text-align:right;}
-  .users .u-lbl{display:block; font-size:10.5px; color:var(--bone-dim); text-transform:uppercase; letter-spacing:.06em; margin-top:2px;}
-  .arrow{color:var(--bone-dim); font-size:18px; text-align:right;}
-  @media (max-width:640px){
-    .board-row{grid-template-columns:34px 1fr; grid-template-areas:"rank name" ". users";}
-    .rank{grid-area:rank;} .actor-name-wrap{grid-area:name;} .users{grid-area:users; text-align:left; margin-top:8px;} .arrow{display:none;}
-  }
-  .board-note{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--bone-dim); margin-top:14px;}
-
-  /* ventures */
-  .venture-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
-  @media (max-width:760px){ .venture-grid{grid-template-columns:1fr;} }
-  .venture-card{
-    border:1px solid var(--line); border-radius:10px; padding:26px; background:var(--panel);
-  }
-  .venture-tag{
-    display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase;
-    padding:4px 10px; border-radius:20px; margin-bottom:14px;
-  }
-  .tag-active{background:rgba(111,156,125,0.14); color:var(--moss); border:1px solid var(--moss-dim);}
-  .tag-inactive{background:rgba(168,90,63,0.12); color:var(--rust); border:1px solid rgba(168,90,63,0.35);}
-  .venture-card h3{font-family:'Space Grotesk',sans-serif; font-size:20px; margin:0 0 10px;}
-  .venture-card p{color:var(--bone-dim); font-size:14.5px; line-height:1.65; margin:0;}
-
-  /* connect */
-  .connect{
-    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
-    background:var(--panel);
-  }
-  .connect-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--line);}
-  .connect-item{
-    background:var(--panel); padding:26px 18px; text-align:center; text-decoration:none; color:var(--bone);
-    transition:background .15s;
-  }
-  .connect-item:hover, .connect-item:focus-visible{background:var(--panel-2);}
-  .connect-item .ci-label{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--bone-dim); margin-top:8px;}
-  .connect-item .ci-icon{font-size:22px;}
-  @media (max-width:760px){ .connect-grid{grid-template-columns:repeat(2,1fr);} }
-
-  footer{padding:36px 0; }
-  .foot-inner{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
-  .foot-inner p{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--bone-dim); margin:0;}
-
-  a:focus-visible, button:focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
-</style>
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manoj Karki | Python Data Engineer & Web Scraping Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#3b82f6',
+                        darkbg: '#0f172a',
+                        cardbg: '#1e293b'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(8px);
+        }
+    </style>
 </head>
-<body class="bg-grid">
+<body class="bg-darkbg text-slate-200 font-sans antialiased selection:bg-brand selection:text-white min-h-screen flex flex-col justify-between">
 
-<header class="site">
-  <div class="wrap nav-inner">
-    <div class="brand"><span class="dot"></span> MK<span style="color:var(--bone-dim)">//</span>datafusionx</div>
-    <nav class="links">
-      <a href="#stack">Stack</a>
-      <a href="#actors">Actors</a>
-      <a href="#ventures">Ventures</a>
-      <a href="#connect">Connect</a>
-    </nav>
-    <a class="nav-cta" href="https://mk1995.github.io/contact/">Get a quote →</a>
-  </div>
-</header>
+    <!-- Header / Nav -->
+    <header class="sticky top-0 z-40 glass-panel border-b border-slate-800">
+        <nav class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tight text-white hover:text-brand transition">Manoj Karki</a>
+            <div class="space-x-6 text-sm font-medium text-slate-400">
+                <a href="#about" class="hover:text-white transition">About</a>
+                <a href="#projects" class="hover:text-white transition">Projects</a>
+                <a href="#gallery" class="hover:text-white transition">Gallery</a>
+                <a href="#contact" class="hover:text-white transition">Contact</a>
+            </div>
+        </nav>
+    </header>
 
-<main>
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="eyebrow">Nepal</div>
-        <h1 class="headline">Data pipelines that don't <span class="accent">fall over</span> at 2am.</h1>
-        <p class="sub">I'm Manoj Karki — a Python data engineer and web scraping specialist. I build custom Apify Actors, resilient crawlers, and low-code automations that turn messy public data into clean, structured, deliverable datasets.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="https://mk1995.github.io/contact/">Start a project</a>
-          <a class="btn btn-ghost" href="https://apify.com/devil_port369-owner">View Apify Store profile</a>
-        </div>
-      </div>
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-20 flex-grow">
 
-      <div class="terminal" role="img" aria-label="Terminal window showing status of Manoj Karki's Apify Actor portfolio">
-        <div class="term-bar">
-          <span class="term-dot" style="background:#e0645c"></span>
-          <span class="term-dot" style="background:#e3b341"></span>
-          <span class="term-dot" style="background:#6f9c7d"></span>
-          <span style="margin-left:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--bone-dim)">datafusionx — zsh</span>
-        </div>
-        <div class="term-body" id="termBody"><div class="term-line" style="color: rgb(201, 209, 222); animation-delay: 0s;"><span class="term-prompt">~$</span> whoami</div><div class="term-line" style="color: rgb(138, 148, 166); animation-delay: 0.5s;">&nbsp;&nbsp;manoj_karki — data engineer / apify actor developer</div><div class="term-line" style="color: rgb(201, 209, 222); animation-delay: 1.2s;"><span class="term-prompt">~$</span> cat status.json</div><div class="term-line" style="color: rgb(138, 148, 166); animation-delay: 1.7s;">&nbsp;&nbsp;{ "actors": 28, "users": "9.7K+", "success_rate": "&gt;99%" }</div><div class="term-line" style="color: rgb(201, 209, 222); animation-delay: 2.5s;"><span class="term-prompt">~$</span> available_for --list</div><div class="term-line" style="color: rgb(138, 148, 166); animation-delay: 3s;">&nbsp;&nbsp;→ custom Apify Actor development</div><div class="term-line" style="color: rgb(138, 148, 166); animation-delay: 3.35s;">&nbsp;&nbsp;→ anti-bot, proxy-rotated crawlers</div><div class="term-line" style="color: rgb(138, 148, 166); animation-delay: 3.7s;">&nbsp;&nbsp;→ n8n / Make / Zapier automation</div><div style="opacity: 0; animation: 0.3s ease 4s 1 normal forwards running fadeIn;"><span class="cursor" style="margin-left: 4px;"></span></div></div>
-      </div>
+        <!-- Hero Section -->
+        <section class="space-y-6">
+            <div class="inline-flex items-center space-x-2 bg-blue-950/60 border border-blue-800/60 rounded-full px-3 py-1 text-xs text-blue-400 font-medium">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Available for Data Engineering & Pipeline Consulting</span>
+            </div>
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                Python Data Engineer & <br/><span class="text-brand">Web Scraping Specialist</span>
+            </h1>
+            <p class="text-lg text-slate-400 max-w-2xl leading-relaxed">
+                I specialize in building high-throughput web scrapers, automated ETL pipelines, and scalable cloud solutions. Founder of EcoAstra Agrotec (currently non-operational) and builder of custom web solutions like HamiKisan.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-2">
+                <a href="https://apify.com/devil_port369-owner" target="_blank" class="bg-brand hover:bg-blue-600 text-white font-medium px-5 py-2.5 rounded-lg transition shadow-md shadow-blue-500/10">
+                    Apify Portfolio
+                </a>
+                <a href="https://www.linkedin.com/in/karkimanoj2020/" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-white font-medium px-5 py-2.5 rounded-lg transition border border-slate-700">
+                    LinkedIn
+                </a>
+            </div>
+        </section>
+
+        <!-- Dynamic Impact Metrics -->
+        <section class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div class="bg-cardbg/60 p-5 rounded-xl border border-slate-800/80 text-center">
+                <span class="text-3xl font-extrabold text-brand block">10+</span>
+                <span class="text-xs text-slate-400 font-medium uppercase tracking-wider mt-1 block">Production Actors</span>
+            </div>
+            <div class="bg-cardbg/60 p-5 rounded-xl border border-slate-800/80 text-center">
+                <span class="text-3xl font-extrabold text-emerald-400 block">99.9%</span>
+                <span class="text-xs text-slate-400 font-medium uppercase tracking-wider mt-1 block">Pipeline Uptime</span>
+            </div>
+            <div class="bg-cardbg/60 p-5 rounded-xl border border-slate-800/80 text-center">
+                <span class="text-3xl font-extrabold text-amber-400 block">4,130m</span>
+                <span class="text-xs text-slate-400 font-medium uppercase tracking-wider mt-1 block">Max Trek Altitude</span>
+            </div>
+            <div class="bg-cardbg/60 p-5 rounded-xl border border-slate-800/80 text-center">
+                <span class="text-3xl font-extrabold text-purple-400 block">Local AI</span>
+                <span class="text-xs text-slate-400 font-medium uppercase tracking-wider mt-1 block">Hermes & Ollama</span>
+            </div>
+        </section>
+
+        <!-- Tech Stack & Specialties -->
+        <section id="about" class="space-y-4">
+            <h2 class="text-2xl font-bold text-white">Technical Core</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div class="bg-cardbg p-3.5 rounded-lg border border-slate-800 text-sm font-semibold text-slate-300 flex items-center gap-2">
+                    <span class="text-brand">▸</span> Python & Data Pipelines
+                </div>
+                <div class="bg-cardbg p-3.5 rounded-lg border border-slate-800 text-sm font-semibold text-slate-300 flex items-center gap-2">
+                    <span class="text-brand">▸</span> Selenium / Playwright / Scrapy
+                </div>
+                <div class="bg-cardbg p-3.5 rounded-lg border border-slate-800 text-sm font-semibold text-slate-300 flex items-center gap-2">
+                    <span class="text-brand">▸</span> n8n & Workflow Automation
+                </div>
+                <div class="bg-cardbg p-3.5 rounded-lg border border-slate-800 text-sm font-semibold text-slate-300 flex items-center gap-2">
+                    <span class="text-brand">▸</span> PostgreSQL / MongoDB / SQLite
+                </div>
+                <div class="bg-cardbg p-3.5 rounded-lg border border-slate-800 text-sm font-semibold text-slate-300 flex items-center gap-2">
+                    <span class="text-brand">▸</span> Apify Actors (DataFusionX)
+                </div>
+                <div class="bg-cardbg p-3.5 rounded-lg border border-slate-800 text-sm font-semibold text-slate-300 flex items-center gap-2">
+                    <span class="text-brand">▸</span> AWS / GCP / DigitalOcean
+                </div>
+                <div class="bg-cardbg p-3.5 rounded-lg border border-slate-800 text-sm font-semibold text-slate-300 flex items-center gap-2">
+                    <span class="text-brand">▸</span> Local AI / Ollama / Hermes
+                </div>
+                <div class="bg-cardbg p-3.5 rounded-lg border border-slate-800 text-sm font-semibold text-slate-300 flex items-center gap-2">
+                    <span class="text-brand">▸</span> Web Scraping Engineering
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Work -->
+        <section id="projects" class="space-y-6">
+            <h2 class="text-2xl font-bold text-white">Featured Work & Ventures</h2>
+            <div class="grid sm:grid-cols-2 gap-6">
+                <div class="bg-cardbg p-6 rounded-xl border border-slate-800 space-y-3 hover:border-slate-700 transition">
+                    <span class="text-xs font-semibold px-2.5 py-1 rounded bg-blue-900/50 text-blue-400 border border-blue-800">Public Portfolio</span>
+                    <h3 class="text-xl font-bold text-white">Apify Actors (DataFusionX)</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Published automation scrapers for platforms like Instagram, YouTube, TikTok, DEV.to, Reddit, Amazon, and Yelp.
+                    </p>
+                    <a href="https://apify.com/devil_port369-owner" target="_blank" class="text-brand text-sm font-medium inline-block pt-2 hover:underline">View Apify Profile &rarr;</a>
+                </div>
+
+                <div class="bg-cardbg p-6 rounded-xl border border-slate-800 space-y-3 hover:border-slate-700 transition">
+                    <span class="text-xs font-semibold px-2.5 py-1 rounded bg-emerald-900/50 text-emerald-400 border border-emerald-800">Web Development</span>
+                    <h3 class="text-xl font-bold text-white">HamiKisan Website</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Designed and built the digital presence and product layout structure for HamiKisan nursery & agricultural store.
+                    </p>
+                    <a href="https://hamikisan.com/" target="_blank" class="text-emerald-400 text-sm font-medium inline-block pt-2 hover:underline">Visit Site &rarr;</a>
+                </div>
+
+                <div class="bg-cardbg p-6 rounded-xl border border-slate-800 space-y-3 hover:border-slate-700 transition">
+                    <span class="text-xs font-semibold px-2.5 py-1 rounded bg-amber-900/50 text-amber-400 border border-amber-800">Agri-Tech Venture</span>
+                    <h3 class="text-xl font-bold text-white">EcoAstra Agrotec</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Founded EcoAstra Agrotec to explore modern agricultural tech solutions in Nepal (currently non-operational).
+                    </p>
+                </div>
+
+                <div class="bg-cardbg p-6 rounded-xl border border-slate-800 space-y-3 hover:border-slate-700 transition">
+                    <span class="text-xs font-semibold px-2.5 py-1 rounded bg-purple-900/50 text-purple-400 border border-purple-800">AI Architecture</span>
+                    <h3 class="text-xl font-bold text-white">Local AI Automation</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Implementing local LLM setups using Ollama, Hermes Agent framework, and automated workflow triggers.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Visual Gallery Section (Nature & Treks) -->
+        <section id="gallery" class="space-y-6">
+            <div class="flex justify-between items-end">
+                <div>
+                    <h2 class="text-2xl font-bold text-white">Nature Photography & Treks</h2>
+                    <p class="text-slate-400 text-sm mt-1">Capturing the landscapes of Nepal and beyond.</p>
+                </div>
+            </div>
+
+            <!-- Dynamic Image Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <!-- Highlight Trek Card -->
+                <div class="sm:col-span-2 group relative overflow-hidden rounded-xl border border-slate-800 cursor-pointer h-64 bg-slate-800" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop" alt="Annapurna Base Camp Trek" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent p-5 flex flex-col justify-end">
+                        <span class="text-xs font-semibold text-amber-400 tracking-wider uppercase">Highlight Trek</span>
+                        <h3 class="text-lg font-bold text-white">Annapurna Base Camp (4,130m)</h3>
+                        <p class="text-xs text-slate-300">Trekking through the heart of the Annapurna Sanctuary.</p>
+                    </div>
+                </div>
+
+                <!-- Nature Shot 1 -->
+                <div class="group relative overflow-hidden rounded-xl border border-slate-800 cursor-pointer h-64 bg-slate-800" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop" alt="Himalayan Wilderness" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent p-4 flex flex-col justify-end">
+                        <h3 class="text-sm font-bold text-white">High Mountain Landscapes</h3>
+                    </div>
+                </div>
+
+                <!-- Nature Shot 2 -->
+                <div class="group relative overflow-hidden rounded-xl border border-slate-800 cursor-pointer h-64 bg-slate-800" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop" alt="Mountain Flora" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent p-4 flex flex-col justify-end">
+                        <h3 class="text-sm font-bold text-white">Alpine Flora & Valleys</h3>
+                    </div>
+                </div>
+
+                <!-- Nature Shot 3 -->
+                <div class="sm:col-span-2 group relative overflow-hidden rounded-xl border border-slate-800 cursor-pointer h-64 bg-slate-800" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1200&auto=format&fit=crop" alt="Foggy Ridge" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent p-5 flex flex-col justify-end">
+                        <h3 class="text-lg font-bold text-white">Mist & Mountain Ridges</h3>
+                        <p class="text-xs text-slate-300">Capturing raw weather and changing light in the wilderness.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Life & Hobbies -->
+        <section id="hobbies" class="space-y-6">
+            <h2 class="text-2xl font-bold text-white">Beyond the Code</h2>
+            <div class="bg-cardbg p-6 rounded-xl border border-slate-800 space-y-4">
+                <p class="text-slate-300 leading-relaxed">
+                    When I'm not writing scrapers or structuring pipelines, I spend my time exploring nature and playing sports.
+                </p>
+                <div class="flex flex-wrap gap-2 pt-2">
+                    <span class="bg-slate-800/80 border border-slate-700/50 text-slate-300 px-3 py-1.5 rounded-md text-sm font-medium">📷 Nature Photography</span>
+                    <span class="bg-slate-800/80 border border-slate-700/50 text-slate-300 px-3 py-1.5 rounded-md text-sm font-medium">🥾 Trekking</span>
+                    <span class="bg-slate-800/80 border border-slate-700/50 text-slate-300 px-3 py-1.5 rounded-md text-sm font-medium">♟️ Chess</span>
+                    <span class="bg-slate-800/80 border border-slate-700/50 text-slate-300 px-3 py-1.5 rounded-md text-sm font-medium">⚽ Football</span>
+                    <span class="bg-slate-800/80 border border-slate-700/50 text-slate-300 px-3 py-1.5 rounded-md text-sm font-medium">🏏 Cricket</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="space-y-4 text-center py-8">
+            <h2 class="text-2xl font-bold text-white">Get in Touch</h2>
+            <p class="text-slate-400">Open for data engineering opportunities, web scraping projects, and technical collaborations.</p>
+            <div class="pt-4 flex justify-center space-x-6">
+                <a href="https://www.linkedin.com/in/karkimanoj2020/" target="_blank" class="text-slate-400 hover:text-white transition font-medium">LinkedIn</a>
+                <a href="https://apify.com/devil_port369-owner" target="_blank" class="text-slate-400 hover:text-white transition font-medium">Apify</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal Lightbox for Images -->
+    <div id="lightbox" class="fixed inset-0 bg-slate-950/90 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm" onclick="closeLightbox()">
+        <img id="lightbox-img" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl border border-slate-800">
     </div>
-  </section>
 
-  <div class="stats">
-    <div class="wrap stats-grid">
-      <div class="stat"><div class="num">28+</div><div class="lbl">PUBLIC APIFY ACTORS</div></div>
-      <div class="stat"><div class="num">9.7K+</div><div class="lbl">TOTAL ACTOR USERS</div></div>
-      <div class="stat"><div class="num">&gt;99%</div><div class="lbl">RUN SUCCESS RATE</div></div>
-      <div class="stat"><div class="num">21</div><div class="lbl">GITHUB REPOSITORIES</div></div>
-    </div>
-  </div>
+    <footer class="text-center py-6 text-sm text-slate-600 border-t border-slate-800">
+        © 2026 Manoj Karki. Built simple and hosted on GitHub Pages.
+    </footer>
 
-  <section id="stack">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="kicker">Toolbox</div>
-        <h2 class="section-title">Built on a production stack, not a tutorial one.</h2>
-        <p class="section-desc">Every Actor in the store runs on the same core: proxy-rotated crawlers, structured storage, and workflow automation that ships data where it's needed, on schedule.</p>
-      </div>
-      <div class="tag-grid">
-        <span class="tag">Python</span>
-        <span class="tag">Selenium</span>
-        <span class="tag">Playwright</span>
-        <span class="tag">Scrapy</span>
-        <span class="tag">Apify SDK</span>
-        <span class="tag">n8n</span>
-        <span class="tag">Make.com</span>
-        <span class="tag">Zapier</span>
-        <span class="tag">PostgreSQL</span>
-        <span class="tag">MongoDB</span>
-        <span class="tag">SQLite</span>
-        <span class="tag">AWS</span>
-        <span class="tag">GCP</span>
-        <span class="tag">DigitalOcean</span>
-        <span class="tag">Ollama / Local LLMs</span>
-        <span class="tag">Hermes Agent Framework</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="actors">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="kicker">Apify Store · devil_port369-owner</div>
-        <h2 class="section-title">Top 5 Actors, ranked by total users</h2>
-        <p class="section-desc">Out of 28 published Actors, these five carry the most real-world traffic — mostly social data extraction tools used for lead gen, audience research, and marketing intelligence.</p>
-      </div>
-
-      <div class="board">
-        <a class="board-row" href="https://apify.com/devil_port369-owner/instagram-scraper">
-          <div class="rank">01</div>
-          <div class="actor-name-wrap">
-            <div class="actor-name">Instagram Profile Email/Phone Scraper</div>
-            <div class="actor-desc">Pulls profile details plus email &amp; phone contact data from public Instagram accounts.</div>
-          </div>
-          <div class="users">2.1K+<span class="u-lbl">users</span></div>
-          <div class="arrow">→</div>
-        </a>
-        <a class="board-row" href="https://apify.com/devil_port369-owner/instagram-followers-scraper">
-          <div class="rank">02</div>
-          <div class="actor-name-wrap">
-            <div class="actor-name">Instagram Followers Scraper</div>
-            <div class="actor-desc">Extracts follower lists and profile stats for influencer and audience analysis.</div>
-          </div>
-          <div class="users">969<span class="u-lbl">users</span></div>
-          <div class="arrow">→</div>
-        </a>
-        <a class="board-row" href="https://apify.com/devil_port369-owner/instagram-follower">
-          <div class="rank">03</div>
-          <div class="actor-name-wrap">
-            <div class="actor-name">Instagram Followers — No Cookies Required</div>
-            <div class="actor-desc">Cookie-free, login-free follower extraction built to avoid account ban risk.</div>
-          </div>
-          <div class="users">483<span class="u-lbl">users</span></div>
-          <div class="arrow">→</div>
-        </a>
-        <a class="board-row" href="https://apify.com/devil_port369-owner/instagram-followings-scraper">
-          <div class="rank">04</div>
-          <div class="actor-name-wrap">
-            <div class="actor-name">Instagram Followings Scraper</div>
-            <div class="actor-desc">Extracts "following" lists from public Instagram accounts for social graph mapping.</div>
-          </div>
-          <div class="users">408<span class="u-lbl">users</span></div>
-          <div class="arrow">→</div>
-        </a>
-        <a class="board-row" href="https://apify.com/devil_port369-owner/tiktok-profile-scraper">
-          <div class="rank">05</div>
-          <div class="actor-name-wrap">
-            <div class="actor-name">TikTok Profile Scraper</div>
-            <div class="actor-desc">Profile stats, bio, email/phone and video metrics from public TikTok accounts. 5.0★ rated.</div>
-          </div>
-          <div class="users">293<span class="u-lbl">users</span></div>
-          <div class="arrow">→</div>
-        </a>
-      </div>
-      <p class="board-note">Full catalog of 28 Actors — including YouTube, Reddit, Amazon, Yelp and DEV.to scrapers — is on the Apify Store profile.</p>
-    </div>
-  </section>
-</main>
-
-<div class="connect" id="connect">
-  <div class="wrap" style="padding:56px 0;">
-    <div class="section-head" style="margin-bottom:28px;">
-      <div class="kicker">Where to find me</div>
-      <h2 class="section-title">Let's get your data flowing.</h2>
-    </div>
-  </div>
-  <div class="connect-grid">
-    <a class="connect-item" href="https://mk1995.github.io/contact/">
-      <div class="ci-icon">✉️</div>
-      <div class="ci-label">Project Inquiry</div>
-    </a>
-    <a class="connect-item" href="https://apify.com/devil_port369-owner">
-      <div class="ci-icon">⚙️</div>
-      <div class="ci-label">Apify Store</div>
-    </a>
-    <a class="connect-item" href="https://github.com/mk1995">
-      <div class="ci-icon">🖥️</div>
-      <div class="ci-label">GitHub</div>
-    </a>
-    <a class="connect-item" href="https://www.linkedin.com/in/karkimanoj2020/">
-      <div class="ci-icon">💼</div>
-      <div class="ci-label">LinkedIn</div>
-    </a>
-    <a class="connect-item" href="https://manojkarki2020.com.np/">
-      <div class="ci-icon">🌐</div>
-      <div class="ci-label">Full Website</div>
-    </a>
-  </div>
-</div>
-
-<footer>
-  <div class="wrap foot-inner">
-    <p>© 2026 Manoj Karki · DataFusionX</p>
-    <p>Built simple. Hosted on GitHub Pages.</p>
-  </div>
-</footer>
-
-<script>
-  const lines = [
-    { p: '~$', t: 'whoami', delay: 0 },
-    { p: '', t: 'manoj_karki — data engineer / apify actor developer', delay: 500, dim:true },
-    { p: '~$', t: 'cat status.json', delay: 1200 },
-    { p: '', t: '{ "actors": 28, "users": "9.7K+", "success_rate": ">99%" }', delay: 1700, dim:true },
-    { p: '~$', t: 'available_for --list', delay: 2500 },
-    { p: '', t: '→ custom Apify Actor development', delay: 3000, dim:true },
-    { p: '', t: '→ anti-bot, proxy-rotated crawlers', delay: 3350, dim:true },
-    { p: '', t: '→ n8n / Make / Zapier automation', delay: 3700, dim:true },
-  ];
-  const body = document.getElementById('termBody');
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function render(){
-    body.innerHTML = '';
-    lines.forEach((l, i) => {
-      const div = document.createElement('div');
-      div.className = 'term-line';
-      div.style.color = l.dim ? '#8a94a6' : '#c9d1de';
-      div.style.animationDelay = reduced ? '0s' : (l.delay/1000) + 's';
-      div.innerHTML = (l.p ? `<span class="term-prompt">${l.p}</span> ` : '&nbsp;&nbsp;') + l.t;
-      body.appendChild(div);
-    });
-    const cursor = document.createElement('span');
-    cursor.className = 'cursor';
-    cursor.style.marginLeft = '4px';
-    if(!reduced){
-      const lastDelay = lines[lines.length-1].delay + 300;
-      const wrap = document.createElement('div');
-      wrap.style.opacity = '0';
-      wrap.style.animation = `fadeIn .3s forwards ${lastDelay/1000}s`;
-      wrap.appendChild(cursor);
-      body.appendChild(wrap);
-    } else {
-      body.appendChild(cursor);
-    }
-  }
-  render();
-</script>
-
-
-
-</body></html>
+    <script>
+        function openLightbox(element) {
+            const imgSrc = element.querySelector('img').src;
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').classList.remove('hidden');
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
