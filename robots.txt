@@ -1,1 +1,42 @@
+# robots.txt for manojkarki2020.com.np
+# Managed by Manoj Karki (DataFusionX)
 
+User-agent: *
+Allow: /
+
+# Allow all major search engines & AI crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://manojkarki2020.com.np/sitemap.xml
