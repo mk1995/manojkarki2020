@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Comments Scraper (No Cookies) — Bulk Comment Extraction | DataFusionX</title>
+  <meta name="description" content="Scrape Instagram comments from posts, reels and IGTV without cookies. Extract comment text, usernames, timestamps and user data. Pay-per-result. Ideal for sentiment analysis, brand monitoring and lead generation. Built by Manoj Karki (DataFusionX).">
+  <meta name="keywords" content="instagram comments scraper, scrape instagram comments, instagram comment extractor, no cookies instagram scraper, instagram reel comments scraper, bulk instagram comments">
+  <link rel="canonical" href="https://manojkarki2020.com.np/instagram-comments-scraper.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://manojkarki2020.com.np/instagram-comments-scraper.html">
+  <meta property="og:title" content="Instagram Comments Scraper (No Cookies) — DataFusionX">
+  <meta property="og:description" content="Extract Instagram comments from posts and reels without cookies. Pay per result. Perfect for sentiment analysis and brand monitoring.">
+  <meta property="og:image" content="https://manojkarki2020.com.np/og-image.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Instagram Comments Scraper (No Cookies)",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "1.80",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Manoj Karki",
+      "url": "https://manojkarki2020.com.np/"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-grid">
+
+  <header class="site">
+    <div class="wrap nav-inner">
+      <a href="https://manojkarki2020.com.np/" class="brand">
+        <span class="dot"></span>
+        DATAFUSIONX <span style="color:var(--bone-dim)">//</span> MANOJ KARKI
+      </a>
+      <nav class="desktop-links">
+        <a href="https://manojkarki2020.com.np/#skills">Skills & Stack</a>
+        <div class="nav-dropdown">
+          <a href="/actors.html">Tools</a>
+          <div class="dropdown-menu">
+
+            <a href="/instagram-email-scraper.html">Instagram Email & Phone Scraper</a>
+            <a href="/instagram-followers-scraper.html">Instagram Followers Scraper</a>
+            <a href="/instagram-following-scraper.html">Instagram Following Scraper</a>
+            <a href="/instagram-comments-scraper.html">Instagram Comments Scraper</a>
+            <a href="/email-verifier.html">Email Verifier</a>
+            <a href="/tiktok-scraper.html">TikTok Profile Scraper</a>
+            <a href="/google-maps-scraper.html">Google Maps Scraper</a>
+            <a href="/actors.html" style="border-top:1px solid var(--line); margin-top:6px; padding-top:12px; color:var(--moss);">View All Tools →</a>
+          </div>
+        </div>
+        <a href="https://apify.com/devil_port369-owner?fpr=lklf0" target="_blank">Apify Store</a>
+        <a href="https://manojkarki2020.com.np/#mcp">MCP & AI Agents</a>
+        <a href="https://manojkarki2020.com.np/#contact">Direct Contact</a>
+      </nav>
+      <a class="nav-cta" href="https://manojkarki2020.com.np/#onboarding">Start Project →</a>
+      <button class="mobile-toggle" id="menuOpen" aria-label="Open Navigation Menu">☰</button>
+    </div>
+  </header>
+
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="https://manojkarki2020.com.np/#skills">Skills & Stack</a>
+    <a href="/actors.html" style="color:var(--moss); font-weight:600;">All Tools</a>
+    <a href="/instagram-email-scraper.html">→ Instagram Email Scraper</a>
+    <a href="/instagram-followers-scraper.html">→ Instagram Followers</a>
+    <a href="/instagram-following-scraper.html">→ Instagram Following</a>
+    <a href="/instagram-comments-scraper.html">→ Instagram Comments</a>
+    <a href="/email-verifier.html">→ Email Verifier</a>
+    <a href="/tiktok-scraper.html">→ TikTok Scraper</a>
+    <a href="/google-maps-scraper.html">→ Google Maps Scraper</a>
+    <a href="https://apify.com/devil_port369-owner?fpr=lklf0" target="_blank">Apify Store ↗</a>
+    <a href="https://manojkarki2020.com.np/#mcp">MCP & AI Agents</a>
+    <a href="https://manojkarki2020.com.np/#contact">Direct Contact</a>
+    <a class="nav-cta" href="https://manojkarki2020.com.np/#onboarding" style="text-align:center; margin-top:20px;">Start Project →</a>
+  </div>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="badge">★ NO COOKIES • PAY PER RESULT</div>
+      <h1>Instagram Comments Scraper <span>(No Cookies)</span></h1>
+      <p class="hero-desc">
+        Extract comments from any public Instagram post, reel or IGTV at scale — without cookies or login.
+        Get comment text, usernames, timestamps and commenter data. Perfect for sentiment analysis, brand monitoring and engaged audience research.
+      </p>
+      <div class="hero-actions">
+        <a href="https://apify.com/devil_port369-owner/instagram-comments?fpr=lklf0" target="_blank" class="btn-primary">
+          Run on Apify →
+        </a>
+        <a href="#input-output" class="btn-secondary">View Input / Output</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-strip">
+    <div class="wrap">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num">No Cookies</div>
+          <div class="stat-lbl">ZERO LOGIN</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">Posts + Reels</div>
+          <div class="stat-lbl">SUPPORTED</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">$1.80 / 1K</div>
+          <div class="stat-lbl">PAY PER RESULT</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">Bulk Ready</div>
+          <div class="stat-lbl">SCALE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Who This Helps</h2>
+      <p class="section-desc">High-value use cases for Instagram comment data.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Brand & Reputation Managers</h3>
+          <p>Monitor what people are saying under your posts and competitor content. Catch negative sentiment early and track campaign reactions.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Social Listening & Research Teams</h3>
+          <p>Build large comment datasets for NLP, sentiment analysis and trend studies without hitting official API limits.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Influencer & Agency Teams</h3>
+          <p>Analyze audience engagement quality. See who is actually commenting and what conversations are happening under creator content.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Lead Generation</h3>
+          <p>Identify highly engaged users from comment sections of relevant niche posts and turn them into outreach targets.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Content Creators</h3>
+          <p>Understand which posts spark real conversation. Export every comment instead of scrolling endlessly on mobile.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Market Researchers</h3>
+          <p>Collect public opinion data from Instagram discussions around products, brands, events or topics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="input-output" style="background: var(--panel); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+    <div class="wrap">
+      <h2 class="section-title">Full Input Example</h2>
+      <p class="section-desc">Provide public post, reel or IGTV URLs. No cookies required.</p>
+      <div class="code-block">{
+  "postUrls": [
+    "https://www.instagram.com/p/DHb-b-qOn_M/",
+    "https://www.instagram.com/reel/DXeSaXmk2yg/",
+    "https://www.instagram.com/tv/CQMv9tHFBsD/"
+  ],
+  "maxComments": 500
+}</div>
+
+      <h2 class="section-title" style="margin-top: 50px;">Full Output Example</h2>
+      <p class="section-desc">Structured comment data ready for analysis or export.</p>
+      <div class="code-block">{
+  "commentId": "17858893269000001",
+  "commentText": "This is exactly what I needed to see today 🔥",
+  "commentDate": "2025-04-20 14:30",
+  "userId": "987654321",
+  "username": "jane_doe_official",
+  "profilePicUrl": "https://instagram.fxxx1-1.fna.fbcdn.net/.../profile.jpg",
+  "postId": "DXeSaXmk2yg",
+  "postUrl": "https://www.instagram.com/reel/DXeSaXmk2yg/"
+}</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Key Advantages</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>🔓 No Cookies Required</h3>
+          <p>Works without Instagram login or session cookies. Zero risk to any account.</p>
+        </div>
+        <div class="feature-card">
+          <h3>📱 Posts, Reels & IGTV</h3>
+          <p>Supports all major public content types in a single run.</p>
+        </div>
+        <div class="feature-card">
+          <h3>💰 Pay-Per-Result</h3>
+          <p>From approximately $1.80 per 1,000 comments. No monthly rental.</p>
+        </div>
+        <div class="feature-card">
+          <h3>📊 Clean Structured Output</h3>
+          <p>JSON / CSV / Excel ready for sentiment tools, CRMs or spreadsheets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--panel); border-top: 1px solid var(--line);">
+    <div class="wrap">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>Does this require Instagram cookies or login?</h3>
+        <p>No. This version is designed to work without cookies or login on public content.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I scrape private posts?</h3>
+        <p>No. Only public posts, reels and IGTV content are supported.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is pricing Pay-Per-Result?</h3>
+        <p>Yes. You pay based on the number of comments successfully extracted.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I limit the number of comments?</h3>
+        <p>Yes. Use the maxComments parameter to control how many comments are collected per run.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="cta-box">
+      <h2>Ready to Extract Instagram Comments?</h2>
+      <p>Scrape comments from posts and reels without cookies. Pay only for results.</p>
+      <a href="https://apify.com/devil_port369-owner/instagram-comments?fpr=lklf0" target="_blank" class="btn-primary">
+        Run Instagram Comments Scraper →
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap foot-inner" style="text-align: center;">
+      <div>© <span id="year"></span> Manoj Karki (DataFusionX). Production Data Pipelines & AI Agents.</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
