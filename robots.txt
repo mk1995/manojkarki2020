@@ -1,10 +1,11 @@
 # robots.txt for manojkarki2020.com.np
 # Managed by Manoj Karki (DataFusionX)
 
+# Global rule: Allow all crawlers (Search Engine SERPs, AI scrapers, LLM search bots)
 User-agent: *
 Allow: /
 
-# Allow all major search engines & AI crawlers
+# Directives for major SERP & Search Engine bots
 User-agent: Googlebot
 Allow: /
 
@@ -14,28 +15,53 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-User-agent: Slurp
+User-agent: YandexBot
 Allow: /
 
-User-agent: GPTBot
+User-agent: Baiduspider
 Allow: /
 
-User-agent: ChatGPT-User
+# Directives for AI Search & Generative AI Models
+User-agent: GPTBot              # OpenAI training scraper
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: ChatGPT-User        # ChatGPT web browsing plugin
 Allow: /
 
-User-agent: Anthropic-AI
+User-agent: OAI-SearchBot       # OpenAI search agent
 Allow: /
 
-User-agent: Google-Extended
+User-agent: ClaudeBot           # Anthropic web crawler
 Allow: /
 
-User-agent: Applebot
+User-agent: Claude-Web          # Anthropic browser assistant
 Allow: /
 
-User-agent: CCBot
+User-agent: Anthropic-AI        # Anthropic AI system
+Allow: /
+
+User-agent: Google-Extended     # Gemini models & Vertex AI
+Allow: /
+
+User-agent: PerplexityBot       # Perplexity AI search crawler
+Allow: /
+
+User-agent: Cohere-ai           # Cohere models
+Allow: /
+
+User-agent: Applebot            # Apple Siri & Spotlight
+Allow: /
+
+User-agent: Applebot-Extended   # Apple Intelligence AI features
+Allow: /
+
+User-agent: CCBot               # Common Crawl (used by multiple open LLMs)
+Allow: /
+
+User-agent: Meta-ExternalAgent  # Meta AI models
+Allow: /
+
+User-agent: Bytespider          # ByteDance / TikTok AI models
 Allow: /
 
 # Sitemap location
