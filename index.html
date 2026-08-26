@@ -617,57 +617,6 @@
   }
   renderTerminal();
 
-  /* Mobile menu handled by assets/js/main.js */
-
-  /* Slide-Over AI Chatbot Interaction */
-  const chatToggleBtn = document.getElementById('chatToggleBtn');
-  const chatDrawer = document.getElementById('chatDrawer');
-  const chatCloseBtn = document.getElementById('chatCloseBtn');
-  const chatInput = document.getElementById('chatInput');
-  const chatSendBtn = document.getElementById('chatSendBtn');
-  const chatMessages = document.getElementById('chatMessages');
-
-  chatToggleBtn.addEventListener('click', () => chatDrawer.classList.add('open'));
-  chatCloseBtn.addEventListener('click', () => chatDrawer.classList.remove('open'));
-
-  function handleUserMessage() {
-    const text = chatInput.value.trim();
-    if (!text) return;
-
-    const userMsg = document.createElement('div');
-    userMsg.className = 'msg msg-user';
-    userMsg.textContent = text;
-    chatMessages.appendChild(userMsg);
-    chatInput.value = '';
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-
-    setTimeout(() => {
-      const aiMsg = document.createElement('div');
-      aiMsg.className = 'msg msg-ai';
-      
-      const lower = text.toLowerCase();
-      if (lower.includes('instagram') || lower.includes('social')) {
-        aiMsg.textContent = "Our Instagram Actors (Email/Phone & Following) operate cookie-free without account login risks. Check out the top cards in the Apify section!";
-      } else if (lower.includes('hermes') || lower.includes('local') || lower.includes('ollama')) {
-        aiMsg.textContent = "DataFusionX builds local AI agent pipelines using the Hermes Framework and Ollama/Qwen models for offline entity parsing with zero SaaS token costs.";
-      } else if (lower.includes('mcp') || lower.includes('ai') || lower.includes('claude')) {
-        aiMsg.textContent = "DataFusionX builds custom MCP servers streaming live web scrapers directly into Claude Desktop, Cursor, and vector databases like Pinecone & Pgvector.";
-      } else if (lower.includes('price') || lower.includes('cost') || lower.includes('quote')) {
-        aiMsg.textContent = "Project costs depend on target anti-bot complexity and volume. Please submit your specifications in the Client Intake Form or message via WhatsApp!";
-      } else {
-        aiMsg.textContent = "Thanks for reaching out! Manoj Karki specializes in custom Apify Actors, proxy management, and AI data pipelines. Scroll to our Client Intake section to start.";
-      }
-      
-      chatMessages.appendChild(aiMsg);
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }, 600);
-  }
-
-  chatSendBtn.addEventListener('click', handleUserMessage);
-  chatInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') handleUserMessage();
-  });
-
   /* Asynchronous Form Handling */
   const onboardForm = document.getElementById('onboardForm');
   const formStatus = document.getElementById('formStatus');
