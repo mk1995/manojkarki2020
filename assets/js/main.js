@@ -12,7 +12,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const chatMessages = document.getElementById('chatMessages');
 
   if (chatToggleBtn && chatDrawer) {
+<<<<<<< HEAD
     chatToggleBtn.addEventListener('click', () => chatDrawer.classList.toggle('open'));
+=======
+    chatToggleBtn.addEventListener('click', () => chatDrawer.classList.add('open'));
+>>>>>>> e5a2984a7643e3933692ee61fbe751248bc3984b
     chatCloseBtn.addEventListener('click', () => chatDrawer.classList.remove('open'));
 
     const knowledgeBase = [
