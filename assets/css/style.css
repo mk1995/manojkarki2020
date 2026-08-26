@@ -618,8 +618,12 @@ h2.section-title { font-family: 'Space Grotesk', sans-serif; font-size: 32px; fo
 .form-group.full { grid-column: span 2; }
 label { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--bone); }
 input, select, textarea {
+  width: 100%; 
   background: #020617; border: 1px solid var(--line-active); border-radius: 6px;
-  padding: 12px 16px; color: var(--bone); font-family: 'Inter', sans-serif; font-size: 14px;
+  padding: 12px 16px; 
+  color: var(--bone); 
+  font-family: 'Inter',
+  sans-serif; font-size: 14px;
   transition: border-color 0.2s;
 }
 input:focus, select:focus, textarea:focus { outline: none; border-color: var(--moss); }
