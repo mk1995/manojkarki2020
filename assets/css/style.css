@@ -487,11 +487,24 @@ footer {
 @media (max-width: 768px) {
   nav.desktop-links,
   .nav-cta { display: none; }
-  .mobile-toggle { display: block; }
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    position: relative;
+    z-index: 210;
+  }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .stat-card { border-bottom: 1px solid var(--line); }
   .actor-grid { grid-template-columns: 1fr; }
   .features-grid { grid-template-columns: 1fr; }
+
+  .wrap { padding: 0 16px; }
+  .form-container { padding: 24px 18px; }
+  .mcp-box { padding: 24px 18px; }
+  .form-grid { gap: 16px; }
 }
 
 /* =====================================================
@@ -673,4 +686,14 @@ textarea { resize: vertical; min-height: 120px; }
   .seo-row { grid-template-columns: 1fr; gap: 8px; }
   .seo-action { text-align: left; margin-top: 4px; }
   .chat-drawer { width: calc(100vw - 32px); right: 16px; bottom: 80px; }
+}
+
+@media (max-width: 768px) {
+  .section-head { text-align: center; }
+  .hero-home { text-align: center; }
+  .cta-row { justify-content: center; }
+  .profile-badge { justify-content: center; }
+  .eyebrow { justify-content: center; }
+  .eyebrow::before { display: none; }
+  .home-actor-grid { grid-template-columns: 1fr; }
 }
